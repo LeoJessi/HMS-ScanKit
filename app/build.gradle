@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+android {
+    compileSdkVersion 33
+    buildToolsVersion "33.0.0"
+    defaultConfig {
+        applicationId "top.jessi.scankitdemo"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.huawei.hms:scanplus:2.12.0.301'
+    implementation project(':Scan')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+}

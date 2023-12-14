@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <FrameLayout
+        android:id="@+id/rim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/scan_area"
+            android:layout_width="480pt"
+            android:layout_height="480pt"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/cloors" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/scan_btn_back"
+        android:layout_width="130pt"
+        android:layout_height="70pt"
+        android:layout_marginTop="20pt"
+        android:layout_marginEnd="40pt"
+        android:background="@drawable/select_white35_corners20"
+        android:paddingStart="12pt"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:textSize="26.7pt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
