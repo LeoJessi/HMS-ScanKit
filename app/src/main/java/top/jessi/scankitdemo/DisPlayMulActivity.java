@@ -29,6 +29,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.scankitdemo.R;
 import com.huawei.hms.ml.scan.HmsScan;
 
 

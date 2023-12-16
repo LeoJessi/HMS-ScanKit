@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
+import com.example.scankitdemo.R;
 
 import top.jessi.scan.utils.ScanManager;
 
