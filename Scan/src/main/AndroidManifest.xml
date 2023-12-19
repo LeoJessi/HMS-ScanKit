@@ -3,8 +3,8 @@
     package="top.jessi.scan">
 
     <!--permission for WiFI post processing,not for scankit itself-->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <!--camera permission-->
     <uses-permission android:name="android.permission.CAMERA" />
     <!--read permission for Bitmap Mode-->
@@ -16,7 +16,8 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!--Android13权限-->
+    <!--    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />-->
 
     <application
         android:allowBackup="true"
