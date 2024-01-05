@@ -41,15 +41,11 @@ import top.jessi.scan.utils.Functions;
 import top.jessi.scan.utils.ScanManager;
 
 public class HMSScanActivity extends Activity {
-    private FrameLayout frameLayout;
     private RemoteView remoteView;
-    private ImageView scan_area;
     int mScreenWidth;
     int mScreenHeight;
     //The width and height of scan_view_finder is both 240 dp.
     final int SCAN_FRAME_SIZE = 268;
-
-    private static final String TAG = "DefinedActivity";
 
     //Declare the key. It is used to obtain the value returned from Scan Kit.
     public static final String SCAN_RESULT = "scanResult";
@@ -63,8 +59,8 @@ public class HMSScanActivity extends Activity {
         initView();
 
 
-        scan_area = findViewById(R.id.scan_area);
-        frameLayout = findViewById(R.id.rim);
+        ImageView scan_area = findViewById(R.id.scan_area);
+        FrameLayout frameLayout = findViewById(R.id.rim);
 
         //1. Obtain the screen density to calculate the viewfinder's rectangle.
         DisplayMetrics dm = getResources().getDisplayMetrics();

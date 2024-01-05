@@ -18,8 +18,7 @@ public class ScanManager {
     public OnScanResultCallback resultCallback;
 
     public synchronized static ScanManager getInstance() {
-        if (instance == null)
-            instance = new ScanManager();
+        if (instance == null) instance = new ScanManager();
         return instance;
     }
 
@@ -28,14 +27,8 @@ public class ScanManager {
     }
 
     public void startScan(final Activity activity, OnScanResultCallback resultCall) {
-
-        PermissionUtils.permission(activity, PermissionConstants.CAMERA, PermissionConstants.STORAGE)
-                .rationale(new PermissionUtils.OnRationaleListener() {
-                    @Override
-                    public void rationale(final ShouldRequest shouldRequest) {
-                        shouldRequest.again(true);
-                    }
-                })
+        PermissionUtils.permission(activity, PermissionConstants.CAMERA)
+                .rationale(shouldRequest -> shouldRequest.again(true))
                 .callback(new PermissionUtils.FullCallback() {
                     @Override
                     public void onGranted(List<String> permissionsGranted) {
@@ -46,23 +39,18 @@ public class ScanManager {
                     @Override
                     public void onDenied(List<String> permissionsDeniedForever, List<String> permissionsDenied) {
                         resultCall.onFailure("Permission denied.");
-
                     }
                 }).request();
-
-
         // 绑定图片接口回调函数事件
         resultCallback = resultCall;
     }
 
 
     public static abstract class OnScanResultCallback {
-        public void onSuccess(String result){
-
+        public void onSuccess(String result) {
         }
 
-        public void onFailure(String result){
-
+        public void onFailure(String result) {
         }
     }
 }
