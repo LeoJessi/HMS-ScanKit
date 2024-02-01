@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.huawei.agconnect'
 android {
-    compileSdkVersion 33
-    buildToolsVersion "33.0.0"
+    namespace = "top.jessi.scankitdemo"
+
+    compileSdk 34
     defaultConfig {
         applicationId "top.jessi.scankitdemo"
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdk 21
+        targetSdk 34
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -30,7 +30,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    implementation 'com.huawei.hms:scanplus:2.12.0.301'
+    implementation 'com.huawei.hms:scanplus:2.12.0.301'
     implementation project(':Scan')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.recyclerview:recyclerview:1.3.2'

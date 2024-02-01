@@ -45,7 +45,6 @@ public class ScanManager {
         resultCallback = resultCall;
     }
 
-
     public static abstract class OnScanResultCallback {
         public void onSuccess(String result) {
         }

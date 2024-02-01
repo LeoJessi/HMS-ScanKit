@@ -81,12 +81,10 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
 
         this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         //Set noTitleBar.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window = getWindow();
-            this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-            if (window != null) {
-                window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            }
+        Window window = getWindow();
+        this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        if (window != null) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
     }
 
@@ -181,22 +179,22 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
      */
     private void generatePermission(int requestCode) {
         // Android13权限申请
-        // if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-        //     ActivityCompat.requestPermissions(
-        //             this,
-        //             new String[]{Manifest.permission.MANAGE_EXTERNAL_STORAGE},
-        //             requestCode);
-        // } else {
-        //     ActivityCompat.requestPermissions(
-        //             this,
-        //             new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-        //             requestCode);
-        // }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.MANAGE_EXTERNAL_STORAGE},
+                    requestCode);
+        } else {
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    requestCode);
+        }
 
-        ActivityCompat.requestPermissions(
-                this,
-                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                requestCode);
+        // ActivityCompat.requestPermissions(
+        //         this,
+        //         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+        //         requestCode);
     }
 
     /**

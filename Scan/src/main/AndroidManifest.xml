@@ -3,28 +3,32 @@
     package="top.jessi.scan">
 
     <!--permission for WiFI post processing,not for scankit itself-->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--camera permission-->
     <uses-permission android:name="android.permission.CAMERA" />
     <!--read permission for Bitmap Mode-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!--write permission for save QRCODE Bitmap,not for scankit itself-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <!--Android13权限-->
-    <!--    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />-->
 
     <application
         android:allowBackup="true"
-        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
 
-        android:requestLegacyExternalStorage="true">
-        <activity android:name=".HMSScanActivity" android:screenOrientation="landscape"
+        android:supportsRtl="true">
+        <activity
+            android:name=".HMSScanActivity"
+            android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name=".utils.PermissionUtils$PermissionActivity"
