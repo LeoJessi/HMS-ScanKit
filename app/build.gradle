@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.huawei.agconnect'
+//apply plugin: 'com.huawei.agconnect'  // 暂时注释 否则发布异常?
+
 android {
     namespace = "top.jessi.scankitdemo"
 
@@ -17,7 +18,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug{
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
