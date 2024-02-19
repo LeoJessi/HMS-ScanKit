@@ -42,6 +42,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Objects;
 
+import top.jessi.scan.utils.Code;
+
 public class GenerateCodeActivity extends Activity {
 
     private static final String TAG = "GenerateCodeActivity";
@@ -151,7 +153,7 @@ public class GenerateCodeActivity extends Activity {
         String inputWidth = barcodeWidth.getText().toString();
         String inputHeight = barcodeHeight.getText().toString();
         //Set the barcode width and height.
-        if (inputWidth.length() <= 0 || inputHeight.length() <= 0) {
+        if (inputWidth.length() == 0 || inputHeight.length() == 0) {
             width = 700;
             height = 700;
         } else {
@@ -159,7 +161,7 @@ public class GenerateCodeActivity extends Activity {
             height = Integer.parseInt(inputHeight);
         }
         //Set the barcode content.
-        if (content.length() <= 0) {
+        if (content.length() == 0) {
             Toast.makeText(this, "Please input content first!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -172,7 +174,8 @@ public class GenerateCodeActivity extends Activity {
             HmsBuildBitmapOption options =
                     new HmsBuildBitmapOption.Creator().setBitmapMargin(margin).setBitmapColor(color).setBitmapBackgroundColor(background).create();
             resultImage = ScanUtil.buildBitmap(content, type, width, height, options);
-            barcodeImage.setImageBitmap(resultImage);
+            // barcodeImage.setImageBitmap(resultImage);
+            barcodeImage.setImageBitmap(Code.generateQrCode("11111", 700, 700));
         } catch (WriterException e) {
             Toast.makeText(this, "Parameter Error!", Toast.LENGTH_SHORT).show();
         }
