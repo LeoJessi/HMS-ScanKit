@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <!--permission for WiFI post processing,not for scankit itself-->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--camera permission-->
@@ -11,7 +15,7 @@
     <!--write permission for save QRCODE Bitmap,not for scankit itself-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--    <uses-feature android:name="android.hardware.camera" />-->
-    <!--    <uses-feature android:name="android.hardware.camera.autofocus" />-->
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
