@@ -31,8 +31,8 @@
         android:supportsRtl="true">
         <activity
             android:name=".HMSScanActivity"
-            android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <!--android:screenOrientation="landscape"-->
         <activity
             android:name=".utils.PermissionUtils$PermissionActivity"
             android:theme="@style/ActivityTranslucent" />
