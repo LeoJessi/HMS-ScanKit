@@ -18,7 +18,6 @@
             android:layout_width="480pt"
             android:layout_height="480pt"
             android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/cloors" />
     </RelativeLayout>
 

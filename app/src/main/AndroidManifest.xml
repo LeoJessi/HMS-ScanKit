@@ -31,7 +31,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name="top.jessi.scankitdemo.CommonActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="landscape" />
         <activity
             android:name="top.jessi.scankitdemo.DefinedActivity"
             android:screenOrientation="portrait" />
